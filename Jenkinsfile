@@ -22,7 +22,7 @@ pipeline {
       }
     }
     stage('RunContainerScan') {
-      steps {
+        steps {
         withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
           script {
             try {
@@ -42,6 +42,9 @@ pipeline {
       }
     }
     stage('RunDASTUsingZAP') {
+       steps {
+        bat("cd F:\\")
+      }
       steps {
         bat("F:\\Udemy\\DevSecOps\\Zap\\ZAP_2.12.0_Crossplatform\\ZAP_2.12.0\\zap.bat -port 9393 -cmd -quickurl https://www.example.com -quickprogress -quickout F:\\Udemy\\DevSecOps\\Zap\\ZAP_2.12.0_Crossplatform\\ZAP_2.12.0\\Output.html")
       }
