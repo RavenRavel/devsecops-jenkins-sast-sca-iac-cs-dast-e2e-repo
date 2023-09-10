@@ -53,6 +53,6 @@ pipeline {
         bat("checkov -s -f main.tf")
       }
     }
-
   }
+}
 
