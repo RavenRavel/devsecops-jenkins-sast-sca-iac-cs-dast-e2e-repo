@@ -50,7 +50,7 @@ pipeline {
 
     stage('checkov') {
       steps {
-        bat("F:\\Python39 checkov -s -f main.tf")
+        bat("F:\\Udemy\\DevSecOps\\devsecops-jenkins-sast-sca-iac-cs-dast-e2e-repo-main\\devsecops-jenkins-sast-sca-iac-cs-dast-e2e-repo-main checkov -s -f main.tf")
       }
     }
 
